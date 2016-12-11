@@ -12,9 +12,10 @@ router.get("/",function(req,res){
   res.sendFile(path + "index.html");
 });
 
+app.use(express.static(__dirname));
 app.use("/bower_components", express.static(__dirname + "/bower_components"));
 app.use("/",router);
 
-app.listen(3000,function(){
-  console.log("Live at Port 3000");
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
