@@ -13,7 +13,7 @@ router.get("/",function(req,res){
 });
 
 app.use(express.static(__dirname));
-app.use("/bower_components", express.static(__dirname + "/bower_components"));
+//app.use("/bower_components", express.static(__dirname + "/bower_components"));
 app.use("/",router);
 
 app.listen(process.env.PORT || 3000, function(){
